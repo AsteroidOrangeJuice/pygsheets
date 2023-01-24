@@ -762,7 +762,7 @@ class Worksheet(object):
             request['repeatCell']['fields'] = fields
             requests.append(request)
 
-        self.client.sheet.batch_update(self.spreadsheet.id, requests)
+        return self.client.sheet.batch_update(self.spreadsheet.id, requests)
 
     @batchable
     def update_col(self, index, values, row_offset=0):
